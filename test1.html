@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	#t{
+		width: 300px;
+		height: 50px;
+		border: 1px solid #ccc;
+	}
+	#w{
+		width: 300px;
+		height: 50px;
+		border: 1px solid #ccc;
+	}
+	</style>
+</head>
+<body>
+<div id="t"></div>
+<button onclick="demo()">开始</button>
+<button onclick="func()">计入</button>
+<button onclick="funcc()">清零</button>
+<div id="w"></div>
+</body>
+<script type="text/javascript">
+t=document.getElementById('t');
+// function demo(){
+// 			time=0;
+// 			m=0;
+// 			mytime=setInterval(function fun(){
+// 				t.innerHTML=m+":"+time;
+// 				time++;
+
+// 				if(time==1000){
+// 					m++;
+// 					time=0;
+// 				}
+// 				},1);
+
+
+
+// }
+
+function demo(){
+	time=new Date();
+	// tt=time.toLocaleString();
+	t1=time.getTime();
+	// alert(t1);
+	mytime=setInterval(function fun(){
+		time2=new Date()
+		t.innerHTML=(time2.getTime()-t1)/1000;
+	},1);
+
+}
+
+function func(){
+	write=t.innerHTML;
+	w=document.getElementById('w');
+	w.innerHTML+=write+"<br>";
+	// alert(write);
+
+
+}
+
+
+
+
+function funcc(){
+		clearInterval(mytime);
+		t.innerHTML="";
+		w.innerHTML="";
+}
+// function demo(b){
+// 	switch(b){
+// 		case 1:
+// 			mytime=setInterval(fun(),100);
+// 		break;
+// 	}
+// }
+// document.getElementsByTagName('button')
+
+
+
+
+
+</script>
+</html>
