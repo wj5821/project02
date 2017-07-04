@@ -1,0 +1,44 @@
+<extend name="Public:public" />
+<block name="title">user</block>
+<block name="main">
+	       <div class="row">
+        <div class="col-sm-12">
+        <section class="panel">
+        <header class="panel-heading">
+            查看用户
+        </header>
+        <div class="panel-body">
+        <div class="adv-table">
+        <table  class="display table table-bordered table-striped" id="dynamic-table" style="text-align:center">
+        <thead>
+        <tr>
+        	<th style="text-align:center">ID</th>
+            <th style="text-align:center">账号</th>
+            <th style="text-align:center">密码</th>
+            <th style="text-align:center">权限</th>
+            <th style="text-align:center" class="hidden-phone">添加时间</th>
+            <th style="text-align:center" class="hidden-phone" width="10%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="row">
+        <tr class="gradeX">
+            <td>{$row['id']}</td>
+            <td>{$row['uname']}</td>
+            <td>{$row['pwd']}</td>
+            <td><if condition="$row['level'] eq 0">普通用户<elseif condition="$row['level'] eq 1" />Vip<else />管理员</if></td>
+            <td class="center hidden-phone">{$row['addtime']|date="Y-m-d H:i:s",###}</td>
+            <td class="center hidden-phone">
+            <a href="__URL__/rolelist?id={$row['id']}"><div class="fa fa-cogs"></div> </a>&nbsp;&nbsp;
+            <a href="__URL__/edit?id={$row['id']}"><div class="fa fa-edit"></div> </a>&nbsp;&nbsp;
+            <a href="__URL__/del?id={$row['id']}"><div class="fa fa-trash-o"></div></a></td>
+        </tr>
+      	</foreach>
+        </tfoot>
+        </table>
+        </div>
+        </div>
+        </section>
+        </div>
+        </div>
+</block>

@@ -1,0 +1,43 @@
+<extend name="Public:public" />
+<block name="title">user</block>
+<block name="main">
+	       <div class="row">
+        <div class="col-sm-12">
+        <section class="panel">
+        <header class="panel-heading">
+            查看节点
+        </header>
+        <div class="panel-body">
+        <div class="adv-table">
+        <table  class="display table table-bordered table-striped" id="dynamic-table" style="text-align:center">
+        <thead>
+        <tr>
+        	<th style="text-align:center">ID</th>
+            <th style="text-align:center">节点名</th>
+            <th style="text-align:center">控制器名</th>
+            <th style="text-align:center">方法名</th>
+            <th style="text-align:center">状态</th>
+            <th style="text-align:center" class="hidden-phone" width="10%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="row">
+        <tr class="gradeX">
+            <td>{$row['id']}</td>
+            <td>{$row['name']}</td>
+            <td>{$row['mname']}</td>
+            <td>{$row['aname']}</td>
+            <td>{$row['status']}</td>
+            <td class="center hidden-phone">
+            <a href="__URL__/editnode?id={$row['id']}"><div class="fa fa-edit"></div> </a>&nbsp;&nbsp;
+            <a href="__URL__/delnode?id={$row['id']}"><div class="fa fa-trash-o"></div></a></td>
+        </tr>
+      	</foreach>
+        </tfoot>
+        </table>
+        </div>
+        </div>
+        </section>
+        </div>
+        </div>
+</block>

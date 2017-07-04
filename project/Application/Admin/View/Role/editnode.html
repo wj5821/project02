@@ -1,0 +1,41 @@
+<extend name="Public:public" />
+<block name="title">user</block>
+<block name="main">
+        <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        修改节点
+                    </header>
+                    <div class="panel-body">
+                        <form role="form" action="__URL__/updatenode" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">节点名</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="RoleName" name="name" value="{$list['name']}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">控制器名</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="MName" name="mname" value="{$list['mname']}">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">方法名</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="AName" name="aname" value="{$list['aname']}">
+                            </div>
+                            <input type="hidden" name="id" value="{$list['id']}">
+                            
+                            
+                            <!-- <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Check me out
+                                </label>
+                            </div> -->
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </form>
+
+                    </div>
+                </section>
+            </div>
+</block>
